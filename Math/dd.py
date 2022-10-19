@@ -1,4 +1,4 @@
-class Solution:
+class Solution():
     def solution(self):
         answer = 0
         return answer

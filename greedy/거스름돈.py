@@ -20,18 +20,22 @@
 
 class Solution:
     def solution(self, money):
-        title = " ### 화폐교환 ### "
+        title = "### 화폐교환 ###"
         arster = "*"*30
-        answer = f" 요청금액 : {money} 원  "
-        count = 0
-        unit = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+        answer = f" 요청금액 : {money} 원 "
+        unit = [50000, 10000, 5000, 1000, 500, 100, 50, 10] 
+        dc = {}
+        print( f" {title} \n {arster} \n {answer} " )
         for i in unit:
-            count = money // i
+            cnt = money // i
+            dc[i] = cnt
             money = money % i
-            print(f' {i}원짜리 {count}개 ')
-        return f"{title} \n {arster} \n {answer} \n {arster} "
+        
+        for k, v in dc.items( ):
+            print(f'{k}원 {v}매  ')
+        print(f'{arster}')
 
 if __name__=="__main__":
     solution = Solution()
-    money = int(input( " 금액 : "))
-    print(solution.solution(money))
+    money = int(input( "금액 :" ))
+    solution.solution(money)
